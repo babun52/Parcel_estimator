@@ -8,7 +8,8 @@ get('/') do
 end
 
 get('/parcel') do
-  new_parcel = Parcel.new(params.fetch('length').to_i, params.fetch('width').to_i, params.fetch('height').to_i, params.fetch('maxDays').to_i, params.fetch('distance').to_i, params.fetch('weight').to_i, 0)
-  @cost = new_parcel.cost()
+  params.has_key?('wrap') ? @wrap = 1 : @wrap = 0
+  new_parcel = Parcel.new(params.fetch('length').to_i, params.fetch('width').to_i, params.fetch('height').to_i, params.fetch('maxDays').to_i, params.fetch('distance').to_i, params.fetch('weight').to_i, @wrap)
+  new_parcel.cost()<=0 ? @cost= 0.5 : @cost = new_parcel.cost()
   erb(:index)
 end
