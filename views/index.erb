@@ -1,0 +1,23 @@
+<h1>Welcome to our PREMIUM parcel service</h1>
+
+<form action="/parcel">
+  <label for="length">Length of Parcel: </label>
+  <input type="number" name="length" placeholder="Length in inches">
+  <label for="width">Width of Parcel: </label>
+  <input type="number" name="width" placeholder="Width in inches">
+  <label for="height">Height of Parcel: </label>
+  <input type="number" name="height" placeholder="Height in inches">
+  <label for="maxDays">Maximum days for delivery: </label>
+  <input type="number" name="maxDays" placeholder="Maximum Days">
+  <label for="distance">Distance of delivery: </label>
+  <input type="number" name="distance" placeholder="Distance in miles">
+  <input type="number" name="weight" placeholder="Weight in lbs">
+  <label for="weight">Weight of Parcel: </label>
+  <input type="checkbox" name="wrap" value="1">Do you want wrapping service?
+  <button type="submit" name="button">Calculate</button>
+</form>
+
+<div class="">
+  <h2>Your parcel's total cost will be:</h2>
+  <h3><%= @cost %></h3>
+</div>
