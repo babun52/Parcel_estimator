@@ -14,5 +14,8 @@ describe('Parcel#check_price') do
     new_parcel = Parcel.new(3,3,3,5,20)
     expect(new_parcel.cost()).to(eq(26.03))
   end
-
+  it('calculate the cost of ship based on dimensions') do
+    new_parcel = Parcel.new(4,5,6,2,12)
+    expect(new_parcel.cost()).to(eq(119.88))
+  end
 end
